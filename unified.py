@@ -66,7 +66,6 @@ class medicine:
                         }
         try:
             med_info = Medicine_Base[med_number]
-            
             self.med_x = med_info[0]
             self.med_y = med_info[1]
             self.width = med_info[2]
@@ -172,5 +171,3 @@ def main():
         chemist1=chemist()
         chemist1.get_medicine(1)
 if __name__ == "__main__":main()
-
-
