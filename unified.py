@@ -23,7 +23,6 @@ class motor:
             self.pin2 = 27
         elif (type=="z"):
             #motor Z Config pins
-            #pins are not set
             self.pin1 = 11  
             self.pin2 = 8
         else:
@@ -91,8 +90,8 @@ class medicine:
 #################################################################################
 class chemist:
     #Attributes needed
-    med_wanted = 0 #i think this should deleted as attribute
-    arrived = 0  # this also the same
+    med_wanted = 0  #i think this should deleted as attribute
+    arrived = 0     #i think this should deleted as attribute
     current_x = 0
     current_y = 0
     delta_x = 0
@@ -162,8 +161,7 @@ class chemist:
         current_y = 0
         delta_x = 0
         delta_y = 0
-        ######move all x and y backward till original push button give a signal
-        motor_z.mov
+        #move all x and y and z backward till original push button give a signal
         # try to get medicine again
         self.get_medicine(self.med_wanted)
 ##################################################################################
