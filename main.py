@@ -7,6 +7,7 @@ GPIO.setmode(GPIO.BCM)
 def main():
         lcd = Adafruit_CharLCD()
         lcd.clear()
+        lcd.message("Hello\nEnter Medicine number")
 
         
         chemist1=chemist()
