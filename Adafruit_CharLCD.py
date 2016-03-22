@@ -1,13 +1,10 @@
 #!/usr/bin/python
 
-#
 # based on code from lrvick and LiquidCrystal
 # lrvic - https://github.com/lrvick/raspi-hd44780/blob/master/hd44780.py
 # LiquidCrystal - https://github.com/arduino/Arduino/blob/master/libraries/LiquidCrystal/LiquidCrystal.cpp
-#
 
 from time import sleep
-
 
 class Adafruit_CharLCD(object):
 
