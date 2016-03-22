@@ -14,13 +14,11 @@ ROW = [14,18,23,24]
 COL = [17,27,22,10]
 for j in range(4):
     GPIO.setup(COL[j],GPIO.OUT)
-    GPIO.output(COL[j],1)
-    
+    GPIO.output(COL[j],1)   
 for i in range(4):
     GPIO.setup(ROW[i],GPIO.IN , pull_up_down = GPIO.PUD_UP)
 try:
-    while(True):
-        
+    while(True):   
         ##CODE
         for j in range(4):
             GPIO.output(COL[j],0)#LOW
