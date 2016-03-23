@@ -8,6 +8,14 @@ def main():
         lcd = Adafruit_CharLCD()
         lcd.clear()
         lcd.message("Hello\nEnter Medicine number")
+        #wecome message
+        #input medicine number
+        #show price on LCD
+        #confirm order
+        #Request the money(paper&coins)
+        #check money
+        #output the medicine
+        #output the reminder in terms of 5s and 10s
 
         
         chemist1=chemist()
