@@ -1,2 +1,2 @@
 # pharmaceutical-vending-machine
-a raspberry pi project for a pharmaceutical vending machine
+making a pharmaceutical-vending-machine using raspberry pi and python 
