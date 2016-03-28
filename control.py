@@ -1,4 +1,5 @@
 class motor:
+    
     pin1 = None
     pin2 = None
     def __init__(self,type):
