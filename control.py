@@ -49,6 +49,9 @@ class medicine:
     width = 0
     push_time = 0
     count = 0
+    price = 0
+    name =""
+    
     #Constructor
     def __init__(self, med_number):
         # Leave object Blank unless i set number make arg (med_number = None)
@@ -58,18 +61,18 @@ class medicine:
     def set_medicine(self , med_number):
         #Dictionary contain info about all medicine (As DataBase)
         Medicine_Base = {
-                          1:[0,0,12,0.6,5],
-                          2:[1,0,4,0.3,3],
-                          3:[2,0,4,0.3,3],
-                          4:[3,0,4,0.3,3],
-                          5:[0,1,4,0.3,3],
-                          6:[1,1,4,0.3,3],
-                          7:[2,1,4,0.3,3],
-                          8:[3,1,4,0.3,3],
-                          9:[0,2,4,0.3,3],
-                          10:[1,2,4,0.3,3],
-                          11:[2,2,4,0.3,3],
-                          12:[3,2,4,0.3,3]
+                          1:[0,0,12,0.6,5,3],
+                          2:[1,0,4,0.3,3,3],
+                          3:[2,0,4,0.3,3,],
+                          4:[3,0,4,0.3,3,],
+                          5:[0,1,4,0.3,3,],
+                          6:[1,1,4,0.3,3,],
+                          7:[2,1,4,0.3,3,],
+                          8:[3,1,4,0.3,3,],
+                          9:[0,2,4,0.3,3,],
+                          10:[1,2,4,0.3,3,],
+                          11:[2,2,4,0.3,3,],
+                          12:[3,2,4,0.3,3,]
                         }
         try:
             med_info = Medicine_Base[med_number]         
@@ -77,7 +80,9 @@ class medicine:
             self.med_y = med_info[1]
             self.width = med_info[2]
             self.push_time = med_info[3]
-            self.count = med_info[4]   
+            self.count = med_info[4]
+            self.price=med_info[5]
+            self.name=med_info[6]
         except:
             # Restore To Default
             self.unset_medicine()

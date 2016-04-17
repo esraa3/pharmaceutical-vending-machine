@@ -201,7 +201,7 @@ class Adafruit_CharLCD(object):
                 self.write4bits(ord(char), True)
 
 
-if __name__ == '__main__':
-    lcd = Adafruit_CharLCD()
-    lcd.clear()
-    lcd.message("  Adafruit 16x2\n  Standard LCD")
+##if __name__ == '__main__':
+##    lcd = Adafruit_CharLCD()
+##    lcd.clear()
+##    lcd.message("  Adafruit 16x2\n  Standard LCD")
