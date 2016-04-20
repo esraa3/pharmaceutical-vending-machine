@@ -3,6 +3,7 @@ import zbar
 import Image
 import cv2
 
+#take image by camera and read it 
 #image = cv2.imread('C:\Users\esraa\Desktop\image ook\dow.jpg')
 import picamera
 camera = picamera.PiCamera()
