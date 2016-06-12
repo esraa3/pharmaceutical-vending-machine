@@ -2,10 +2,6 @@
 ####from Adafruit_CharLCD import Adafruit_CharLCD
 ##import time
 ##GPIO.setmode(GPIO.BCM)
-### Initialise and clear LCD
-##lcd = Adafruit_CharLCD()
-##lcd.clear()
-##time.sleep(0.5)
 class keypad:
     def __init__(self):    
         MATRIX = [ [1,2,3,'A'],
