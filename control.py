@@ -1,12 +1,12 @@
 class motor:
     pin1 = None
     pin2 = None
-    def __init__(self,type):
-        #set pins
-        self.set_pins(type);
+    def __init__(self,type):   
         #make pins output
         GPIO.setup(self.pin1,GPIO.OUT)
-        GPIO.setup(self.pin2,GPIO.OUT)     
+        GPIO.setup(self.pin2,GPIO.OUT)
+        #set pins
+        self.set_pins(type);
     def set_pins(self , type):
         type=type.lower()
         if (type=="x"):
@@ -18,6 +18,31 @@ class motor:
             self.pin1 = 17
             self.pin2 = 27
         elif (type=="z"):
+            #motor Z Config pins
+            #pins are not set
+            self.pin1 = 11  
+            self.pin2 = 8
+        elif (type=="coin_ret"):
+            #motor Z Config pins
+            #pins are not set
+            self.pin1 = 11  
+            self.pin2 = 8
+        elif (type=="paper_in"):
+            #motor Z Config pins
+            #pins are not set
+            self.pin1 = 11  
+            self.pin2 = 8
+        elif (type=="10_ret"):
+            #motor Z Config pins
+            #pins are not set
+            self.pin1 = 11  
+            self.pin2 = 8
+        elif (type=="20_ret"):
+            #motor Z Config pins
+            #pins are not set
+            self.pin1 = 11  
+            self.pin2 = 8
+        elif (type=="paper_to_box"):
             #motor Z Config pins
             #pins are not set
             self.pin1 = 11  

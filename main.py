@@ -5,16 +5,22 @@ import time
 from Adafruit_CharLCD import Adafruit_CharLCD
 from keypad import keypad
 from control import *
+from my_keypad import *
 GPIO.setmode(GPIO.BCM)
+
 def main():
         while(1):
                 #wecome message
-                lcd = Adafruit_CharLCD()
+                lcd = Adafruit_CharLCD()                        
                 lcd.clear()
                 lcd.message("Hello\nEnter Medicine number")
                 #input medicine number
-                keypressed =keypad()
-                med_num = keypressed
+                ret= new my_keypad()
+                if ret == 0:
+                        lcd.message("Error")
+                        sleep (2)
+                        continue
+                med_num = ret
                 #show price on LCD and confirm order 
                 lcd.clear()
                 med = Medicine(med_num);
@@ -25,29 +31,38 @@ def main():
                 lcd.message("To Confirm Order \nEnter C")
                 keypressed =keypad()
                 if keypressed != "C":
+                        lcd.message("Error")
+                        sleep (2)
                         continue
-                #Request the money(paper&coins)
-                lcd.clear()
-                cashier = cashier(med_num)
-                lcd.message("Enter {0} LE \n Remaing :{1} LE ".Format(med.price,cashier.remain())
-                            
-                #check money
-                imageCompare=ImageCompare()
-                a=imageCompare.compare('1.jpg','2.jpg')
-                print 'Images Equal?',a
+                #take money
+                motor("paper_in").move_forward(5)
+                #match code here
+                #case matched
+                entered = matched 
+                #case no match
+                entered =0
+                #take coins
+                while(1):
+                        lcd.message("Enter {0} LE \n Remaing :{1} LE ".Format(med.price,med.price - entered)
+                        #if gpio goes low
+                                entered+=1
+                                #if entered = price break loop
+                                    
                 #output the medicine
-                chemist1=chemist()
-                chemist1.get_medicine(med_num)
-                #output the reminder in terms of 5s and 10s
-
-        
-        
-##        try:
-##            while(1):
-##                med=input("Enter med num : ")
-                ##chemist1.get_medicine(med)
-##        except:
-##            print(" Error ")
-            
+                chemist().get_medicine(med_num)
+                #output the reminder in terms of 1s and 10s and 20s
+                while (reminder>0):
+                        if reminder>=20:
+                                    #output 1*20
+                                    reminder -=20
+                                    continue
+                        elif reminder >=10:
+                                    #output 1*10
+                                    reminder -=10
+                                    continue
+                       else:
+                                    #output ones
+                                    reminder--
+                                    continue             
 if __name__ == "__main__":main()
 
