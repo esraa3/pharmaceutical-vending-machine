@@ -12,7 +12,7 @@ def compare(capture,im2):
     res=capture[topLeft[1]:botRight[1],topLeft[0]:botRight[0]] #(res)result img from matching 
     row1, cols1, channel1 = res.shape  #determine r,c,ch for roi(result)
     row2, cols2, channel2 = im2.shape  #img from data
-    if (row1 != row2) and (cols1 != cols2) or (channel1 != channel2):
+    if (row1 != row2) or (cols1 != cols2) or (channel1 != channel2) :
         print "two images are different"
         match=False
         return match
@@ -25,21 +25,15 @@ def compare(capture,im2):
                 if (px1.sum() != px2.sum()):
                     mismatch = mismatch + 1
         print 'total mismatch equals :', mismatch
-        if(mismatch<=55000):
+        if(mismatch<=60000):
             match=True
         else:
             match=False
         return match
-    #C:\Users\Hard ware\Desktop\
-    #C:\Users\Hard ware\Desktop\money5\
-capture=cv2.imread('C:\Users\Hard ware\Desktop\money5\imag2.jpg') #img from camera
-image2=cv2.imread('C:\Users\Hard ware\Desktop\money5\imae.png') #img1 from data
-image3=cv2.imread('C:\Users\Hard ware\Desktop\money5\imz.png')  #img2 from data
-image4=cv2.imread('C:\Users\Hard ware\Desktop\money5\imm.png')  #img3 from data
-## imageList=[image2,image3,image4]
-##for i in imageList:
-##    a=compare(capture,i)
-##    print "matching !!",a
+capture=cv2.imread('C:\Users\Hard ware\Desktop\money5\imt3.jpg') #img from camera
+image2=cv2.imread('C:\Users\Hard ware\Desktop\money5\im55.png') #img1 from data
+image3=cv2.imread('C:\Users\Hard ware\Desktop\money5\imt11.png') #img2 from data
+image4=cv2.imread('C:\Users\Hard ware\Desktop\money5\imt22.png') #img3 from data
 b=compare(capture,image2)
 print "matching !!",b
 c=compare(capture,image3)
