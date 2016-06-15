@@ -10,6 +10,8 @@ false=0
 #take photo by camera
 camera = picamera.PiCamera()
 camera.capture('image.jpg')
+image=cv2.imread('/home/pi/image.jpg')
+imageList=[image1]
 
 #define the list of boundaries
 boundaries = [
