@@ -6,6 +6,8 @@ import cv2
 import picamera
 
 camera = picamera.PiCamera()
+camera.vflip=True
+camera.hflip=True
 camera.capture('image.jpg')
 sleep (5)
 camera.capture('image1.jpg')
